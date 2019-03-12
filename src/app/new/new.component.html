@@ -1,0 +1,83 @@
+<div class="container">
+  <form [formGroup]="registrationForm">
+
+    <div class="form-group">
+      <label for="firstname">
+        <input type="text" class="form-control" formControlName="firstname" id="firstname" placeholder="First Name">
+
+      </label>
+      <span *ngIf="registrationForm.controls['firstname'].hasError('required')" class="alert alert-danger">
+        First Name is required.
+      </span>
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastname">
+        <input type="text" class="form-control" id="lastname" formControlName="lastname" placeholder="Last Name">
+      </label>
+      <span *ngIf="registrationForm.controls['lastname'].hasError('required')" class="alert alert-danger">
+        Last Name is required.
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">
+        <input type="number" class="form-control" id="phone" formControlName="phone" placeholder="Phone no.">
+      </label>
+      <span *ngIf="registrationForm.controls['phone'].hasError('required')" class="alert alert-danger">
+        Phone No. is required.
+      </span>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email Id">
+      </label>
+      <span *ngIf="registrationForm.controls['email'].hasError('required')" class="alert alert-danger">
+        email is required.
+      </span>
+    </div>
+
+    <div [formGroup]="addressForm">
+
+      <label for="lane1">Address
+        <input type="text" class="form-control" id="lane1" placeholder="lane 1">
+      </label>
+
+
+      <label for="lane2">
+        <input type="text" class="form-control" id="lane2" placeholder="lane 2">
+      </label>
+
+      <div class="form-group">
+        <label for="city">
+          <input type="text" class="form-control" id="city" placeholder="city">
+        </label>
+
+      </div>
+
+      <div class="form-group">
+        <label for="state">
+          <input type="text" class="form-control" id="state" placeholder="state">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="pincode">
+          <input type="number" class="form-control" id="pincode" placeholder="Pincode">
+        </label>
+
+      </div>
+    </div>
+
+
+
+
+    <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+
+
+  </form>
+
+</div>
